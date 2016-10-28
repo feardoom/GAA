@@ -3,21 +3,18 @@ package dia281016;
 import java.util.Scanner;
 
 public class BalancoGAA {
-	int totalReceitas;
-	int totalDespesas;
 	
 	public BalancoGAA() {
+		int receitas = getReceitas();
+		int despesas = getDespesas();
 		
-		calcularReceitas();
-		System.out.println("O total de receitas é: €" + totalReceitas + "\n");
-		calcularDespesas();
-		System.out.println("O total de despesas é: €" + totalDespesas);
-		
-		System.out.println("\nO balanço final é: €" + (totalReceitas - totalDespesas));
+		System.out.println("O total de receitas é: €" + receitas + "\n");
+		System.out.println("O total de despesas é: €" + despesas);
+		System.out.println("\nO balanço final é: €" + getBalanco(receitas, despesas));
 	}
 	
-	public void calcularReceitas() {
-		int quotas ,recBaile,recBar;
+	public int getReceitas() {
+		int quotas ,recBaile,recBar, totalReceitas;
 		
 		System.out.println("Qual foi o seu valor de quotas?");
 		quotas = new Scanner(System.in).nextInt();
@@ -27,10 +24,12 @@ public class BalancoGAA {
 		recBar = new Scanner(System.in).nextInt();
 		
 		totalReceitas = quotas + recBaile + recBar;
+		
+		return totalReceitas;
 	}
 	
-	public void calcularDespesas() {
-		int agua, luz, telefone;
+	public int getDespesas() {
+		int agua, luz, telefone, totalDespesas;
 		
 		System.out.println("Quanto pagou de agua?");
 		agua = new Scanner(System.in).nextInt();
@@ -40,6 +39,12 @@ public class BalancoGAA {
 		telefone = new Scanner(System.in).nextInt();
 		
 		totalDespesas = agua + luz + telefone;
+		
+		return totalDespesas;
+	}
+	
+	public int getBalanco(int receita, int despesa) {
+		return receita - despesa;
 	}
 
 }
