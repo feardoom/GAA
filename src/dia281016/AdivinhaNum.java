@@ -5,8 +5,8 @@ import java.util.Scanner;
 
 public class AdivinhaNum {
 	int escondido;
-	final int VALORMAX = 10;
-	final int TENTATIVAS = 3;
+	final int VALORMAX = 100;
+	final int TENTATIVAS = 7;
 	
 	public AdivinhaNum() {
 		Random r = new Random();
