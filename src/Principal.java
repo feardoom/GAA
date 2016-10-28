@@ -1,3 +1,4 @@
+import dia281016.BalancoGAA;
 import dia281016.CalculadoraSimples;
 
 public class Principal {
@@ -7,7 +8,7 @@ public class Principal {
 	}
 
 	public static void main(String[] args) {
-		new CalculadoraSimples();
+		new BalancoGAA();
 	}
 
 }
