@@ -5,19 +5,22 @@ import java.util.Scanner;
 
 public class AdivinhaNum {
 	int escondido;
-	final int VALORMAX = 5;
+	final int VALORMAX = 10;
+	final int TENTATIVAS = 3;
 	
 	public AdivinhaNum() {
 		Random r = new Random();
 		escondido = r.nextInt(VALORMAX);
 		
-		tentarAdivinhar();
+		for (int i=1;i<=TENTATIVAS;i++) {
+			tentarAdivinhar();
+		}
 	}
 	
 	public void tentarAdivinhar() {
 		int n;
-		System.out.println("Qual o seu numero?");
-		n = new Scanner(System.in).nextInt();
+		System.out.println("Qual o seu numero entre 0 e " + VALORMAX + "?");
+		n = readInt();
 		if (n > escondido) {
 			System.out.println("O numero escondido e menor");
 		} else if (n < escondido) {
@@ -25,6 +28,10 @@ public class AdivinhaNum {
 		} else {
 			System.out.println("Acertaste!!! Here's a potato medal O");
 		}
+	}
+	
+	public int readInt() {
+		return new Scanner(System.in).nextInt();
 	}
 
 }
